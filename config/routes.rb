@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   resources :customers
 
   # api routes
-  #### Customer
+  ## Customer
   get "/customer/orders/:id", to: "customers#orders"
   get "/customer/activeOrders/:id", to: "customers#activeOrders"
   post "/customer/order", to: "orders#create"
@@ -28,4 +28,9 @@ Rails.application.routes.draw do
   
   get "/customer/favFoods/:id", to: "customers#favFoods"
   post "/customer/newFood/:id", to: "customers#newFavFood"
+
+  ## Restaurant
+  get "/restaurant/orders/:id", to: "restaurants#orders"
+  get "/restaurant/activeOrders/:id", to: "restaurants#activeOrders"
+  patch "/restaurant/updateOrder/:id", to: "restaurants#updateOrder"
 end

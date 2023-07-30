@@ -29,6 +29,13 @@ class Restaurant < ApplicationRecord
         self.staffs.where(active: true)
     end
 
+    def orderUpdate(id,values)
+        track = self.order_tracks.find_by(order_id:id)
+        track.update(values)
+        track
+    end
+
+    
     def allStaff
         self.staffs.all
     end

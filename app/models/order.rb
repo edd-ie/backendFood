@@ -7,14 +7,14 @@ class Order < ApplicationRecord
 
     #get array of items & food_ids from Front
     def newTrack
-        track = self.order_track.create!(
-            status: "Prepping",
+        OrderTrack.create!(
+            items: self.items,
+            status: "prepping",
             order_id: self.id,
+            staff_id: 1,
             restaurant_id: self.restaurant_id,
             paid: false,
             complete: false,
-            items: self.items
         )
-        track
     end
 end

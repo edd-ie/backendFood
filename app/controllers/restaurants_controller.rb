@@ -29,6 +29,31 @@ class RestaurantsController < ApplicationController
         head :no_content
     end
 
+    def orders
+        orders = finder.allOrders
+        render json: orders, status: :ok
+    end
+
+    def activeOrders
+        orders = finder.activeOrders
+        render json: orders, status: :ok
+    end
+
+    def staff
+        staff = finder.allStaff
+        render json: staff, status: :ok
+    end
+
+    def menu
+        menu = finder.menu
+        render json: menu, status: :ok
+    end
+
+    def updateOrder
+        change = finder.orderUpdate(params[:order_id],valid_params)
+        render json: change, status: :accepted
+    end
+
 
     private
 
@@ -39,7 +64,9 @@ class RestaurantsController < ApplicationController
     def valid_params
         params.permit(:id, :name, :email, :password, :password_confirmation, :phone, :policy, 
             :picture, :pay_bill, :till_num, :acc_num, :ambience, :ratings, :sales,
-            :cuisine, :price_range, :latitude, :longitude
+            :cuisine, :price_range, :latitude, :longitude,
+            :items, :status, :order_id, :restaurant_id, :staff_id, 
+            :chef_id, :paid, :complete 
         )
     end
 

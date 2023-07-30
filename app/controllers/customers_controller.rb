@@ -55,8 +55,8 @@ class CustomersController < ApplicationController
     
     def newFavFood
         food = finder
-        food.newFood(params[:food_id])
-        render json: food, status: :created
+        fav = food.newFood(params[:food_id])
+        render json: fav, status: :created
     end
 
 
