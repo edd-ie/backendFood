@@ -1,4 +1,5 @@
-rescue_from ActiveRecord::RecordNotFound, with: :no_records
+class FoodsController < ApplicationController
+    rescue_from ActiveRecord::RecordNotFound, with: :no_records
     rescue_from ActiveRecord::RecordInvalid, with: :unprocessable
 
     def index
@@ -45,3 +46,4 @@ rescue_from ActiveRecord::RecordNotFound, with: :no_records
     def unprocessable(invalid)
         render json: { errors: invalid.record.errors.full_messages}, status: :unprocessable_entity
     end
+end
