@@ -54,6 +54,24 @@ class RestaurantsController < ApplicationController
         render json: change, status: :accepted
     end
 
+    def menu
+        render json: finder.menu, status: :ok
+    end
+
+    def updateMenu
+        id = params[:food_id]
+        filtered = {}
+        valid_params.each do |key, value|
+            puts key
+            if key != :food_id
+                filtered[key] = value
+            end
+        end
+        p filtered
+        change = finder.menuChange(id,filtered)
+        render json: change, status: :accepted
+    end
+
 
     private
 
@@ -65,8 +83,9 @@ class RestaurantsController < ApplicationController
         params.permit(:id, :name, :email, :password, :password_confirmation, :phone, :policy, 
             :picture, :pay_bill, :till_num, :acc_num, :ambience, :ratings, :sales,
             :cuisine, :price_range, :latitude, :longitude,
-            :items, :status, :order_id, :restaurant_id, :staff_id, 
-            :chef_id, :paid, :complete 
+            :items, :status, :order_id, :staff_id,:food_id,
+            :chef_id, :paid, :complete,
+            :category, :ingredients, :price, :discount, :restaurant_id, :vegetarian, :allergen, :ratings
         )
     end
 

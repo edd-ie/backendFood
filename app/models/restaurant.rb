@@ -18,11 +18,11 @@ class Restaurant < ApplicationRecord
     validates :email, uniqueness: true
 
     def allOrders
-        self.orders_tracks.all
+        self.order_tracks.all
     end
 
     def activeOrders
-        self.orders_tracks.where(complete: false)
+        self.order_tracks.where(complete: false)
     end
 
     def activeStaff
@@ -32,7 +32,6 @@ class Restaurant < ApplicationRecord
     def orderUpdate(id,values)
         track = self.order_tracks.find_by(order_id:id)
         track.update(values)
-        track
     end
 
     
@@ -42,5 +41,10 @@ class Restaurant < ApplicationRecord
     
     def menu
         self.foods.all
+    end
+
+    def menuChange(id, values)
+        food = self.foods.find_by(id:id)
+        food.update(values)
     end
 end
