@@ -75,7 +75,7 @@ class CustomersController < ApplicationController
     end
 
     def unprocessable(invalid)
-        render json: { errors: invalid.record.errors.full_messages }, status: :unprocessable_entity
+        render json: { errors: invalid.record.errors.full_messages}, status: :unprocessable_entity
     end
 end
 
