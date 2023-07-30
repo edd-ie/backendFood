@@ -60,138 +60,138 @@ puts "Seeding Data ...🌱🌱🌱"
 # end
 
 
-one = [['cheeseburger','Arepas'],['sush', 'humus'],
-    ['chicken fajitas', 'Ricotta stuffed Ravioli'],
-    ['chicken tikka masala', 'Pasta with chicken'],
-    ['pizza', 'Pizza with mozzarella']
-]
+# one = [['cheeseburger','Arepas'],['sush', 'humus'],
+#     ['chicken fajitas', 'Ricotta stuffed Ravioli'],
+#     ['chicken tikka masala', 'Pasta with chicken'],
+#     ['pizza', 'Pizza with mozzarella']
+# ]
 
-two = [[1,2], [3,4], [5,6], [7,8], [9,10]]
-n = 0
+# two = [[1,2], [3,4], [5,6], [7,8], [9,10]]
+# n = 0
 
-5.times do
-    Order.create(
-        items:one[n],
-        discount: 0,
-        latitude: -1.198300,
-        longitude: 36.801060,
-        restaurant_id: 1,
-        customer_id: 1,
-        food_id: two[n],
-        service_fee: 50,
-        total: 1200,
-    )
-    n += 1
-end
+# 5.times do
+#     Order.create(
+#         items:one[n],
+#         discount: 0,
+#         latitude: -1.198300,
+#         longitude: 36.801060,
+#         restaurant_id: 1,
+#         customer_id: 1,
+#         food_id: two[n],
+#         service_fee: 50,
+#         total: 1200,
+#     )
+#     n += 1
+# end
 
-#Seed data for the "inventories" table
-inventories_data = [
-  { item: "Potatoes", quantity: 50, restaurant_id: 1 },
-  { item: "Tomatoes", quantity: 30, restaurant_id: 1 },
-  { item: "Carots", quantity: 20, restaurant_id: 1 },
-  { item: "Onions", quantity: 15, restaurant_id: 1 },
-]
+# #Seed data for the "inventories" table
+# inventories_data = [
+#   { item: "Potatoes", quantity: 50, restaurant_id: 1 },
+#   { item: "Tomatoes", quantity: 30, restaurant_id: 1 },
+#   { item: "Carots", quantity: 20, restaurant_id: 1 },
+#   { item: "Onions", quantity: 15, restaurant_id: 1 },
+# ]
 
-# Create the inventories records in the database
-inventories_data.each{|x|
-  Inventory.create(x)
-}
+# # Create the inventories records in the database
+# inventories_data.each{|x|
+#   Inventory.create(x)
+# }
 
-#Seed data for the "fav_foods" table
-fav_foods_data = [
-  { customer_id: 1, food_id: 1 },
-  { customer_id: 1, food_id: 2 },
-  { customer_id: 2, food_id: 3 },
-  { customer_id: 2, food_id: 4 },
-  # Add more data as needed
-]
+# #Seed data for the "fav_foods" table
+# fav_foods_data = [
+#   { customer_id: 1, food_id: 1 },
+#   { customer_id: 1, food_id: 2 },
+#   { customer_id: 2, food_id: 3 },
+#   { customer_id: 2, food_id: 4 },
+#   # Add more data as needed
+# ]
 
-# Create the fav_foods records in the database
-fav_foods_data.each{|x|
-    FavFood.create(x)
-}
+# # Create the fav_foods records in the database
+# fav_foods_data.each{|x|
+#     FavFood.create(x)
+# }
 
-#Seed data for the "fav_foods" table
-fav_res_data = [
-  { customer_id: 1, restaurant_id: 1 },
-  { customer_id: 1, restaurant_id: 2 },
-  { customer_id: 2, restaurant_id: 3 }
-]
+# #Seed data for the "fav_foods" table
+# fav_res_data = [
+#   { customer_id: 1, restaurant_id: 1 },
+#   { customer_id: 1, restaurant_id: 2 },
+#   { customer_id: 2, restaurant_id: 3 }
+# ]
 
-# Create the fav_res records in the database
-fav_res_data.each{|x|
-    FavRestaurant.create(x)
-}
+# # Create the fav_res records in the database
+# fav_res_data.each{|x|
+#     FavRestaurant.create(x)
+# }
 
-Staff.create!(
-    name: "Jeeves",
-    title: "manager",
+# Staff.create!(
+#     name: "Jeeves",
+#     title: "manager",
+#     restaurant_id: 1,
+#     active: true,
+# )
+# Staff.create!(
+#     name: "Ratatouille",
+#     title: "chef",
+#     restaurant_id: 1,
+#     active: true,
+# )
+# Staff.create!(
+#     name: "Croissant",
+#     title: "chef",
+#     restaurant_id: 1,
+#     active: true,
+# )
+# Staff.create!(
+#     name: "Annette",
+#     title: "chef",
+#     restaurant_id: 1,
+#     active: true,
+# )
+
+OrderTrack.create!(
+    status: "prepping",	
+    order_id: 1,
     restaurant_id: 1,
-    active: true,
+    staff_id: 1,
+    chef_id: 1,
+    paid: false,
+    complete: false,
 )
-Staff.create!(
-    name: "Ratatouille",
-    title: "chef",
+OrderTrack.create!(
+    status: "cooking",	
+    order_id: 2,
     restaurant_id: 1,
-    active: true,
+    staff_id: 1,
+    chef_id: 2,
+    paid: true,
+    complete: false,
 )
-Staff.create!(
-    name: "Croissant",
-    title: "chef",
+OrderTrack.create!(
+    status: "Done",	
+    order_id: 3,
     restaurant_id: 1,
-    active: true,
+    staff_id: 1,
+    chef_id: 3,
+    paid: true,
+    complete: true,
 )
-Staff.create!(
-    name: "Annette",
-    title: "chef",
+OrderTrack.create!(
+    status: "Done",	
+    order_id: 4,
     restaurant_id: 1,
-    active: true,
+    staff_id: 1,
+    chef_id: 4,
+    paid: false,
+    complete: true,
 )
-
-# OrderTrack.create!(
-#     status: "prepping",	
-#     order_id: 1,
-#     restaurant_id: 1,
-#     staff_id: 1,
-#     chef_id: 1,
-#     paid: false,
-#     complete: false,
-# )
-# OrderTrack.create!(
-#     status: "cooking",	
-#     order_id: 2,
-#     restaurant_id: 1,
-#     staff_id: 1,
-#     chef_id: 2,
-#     paid: true,
-#     complete: false,
-# )
-# OrderTrack.create!(
-#     status: "Done",	
-#     order_id: 3,
-#     restaurant_id: 1,
-#     staff_id: 1,
-#     chef_id: 3,
-#     paid: true,
-#     complete: true,
-# )
-# OrderTrack.create!(
-#     status: "Done",	
-#     order_id: 4,
-#     restaurant_id: 1,
-#     staff_id: 1,
-#     chef_id: 4,
-#     paid: false,
-#     complete: true,
-# )
-# OrderTrack.create!(
-#     status: "Done",	
-#     order_id: 5,
-#     restaurant_id: 1,
-#     staff_id: 1,
-#     chef_id: 4,
-#     paid: true,
-#     complete: true,
-# )
+OrderTrack.create!(
+    status: "Done",	
+    order_id: 5,
+    restaurant_id: 1,
+    staff_id: 1,
+    chef_id: 4,
+    paid: true,
+    complete: true,
+)
 
 puts "✅✅✅...Seeding Data Complete"	

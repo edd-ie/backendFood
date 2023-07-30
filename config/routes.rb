@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  # root routes
+  root "fallback#home"
+  get "*path", to: "fallback#error", constraints: ->(req) { !req.xhr? && req.format.html? }
+  
+  # main routes
   resources :loyalties
   resources :inventories
   resources :order_tracks
@@ -11,8 +16,16 @@ Rails.application.routes.draw do
   resources :staffs
   resources :restaurants
   resources :customers
-  # root routes
-  root "fallback#home"
-  get "*path", to: "fallback#error", constraints: ->(req) { !req.xhr? && req.format.html? }
 
+  # api routes
+  #### Customer
+  get "/customer/orders/:id", to: "customers#orders"
+  get "/customer/activeOrders/:id", to: "customers#activeOrders"
+  post "/customer/order", to: "orders#create"
+  
+  get "/customer/favRes/:id", to: "customers#favRes"
+  post "/customer/newRes/:id", to: "customers#newFavRes"
+  
+  get "/customer/favFoods/:id", to: "customers#favFoods"
+  post "/customer/newFood/:id", to: "customers#newFavFood"
 end
