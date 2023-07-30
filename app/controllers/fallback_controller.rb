@@ -1,6 +1,6 @@
 class FallbackController < ApplicationController
     def home
-        render file: 'public/home.html'
+        render file: '../views/fallback/home.html'
     end
 
     def error
