@@ -10,8 +10,7 @@ class Restaurant < ApplicationRecord
     has_many :restaurant_reviews
     has_many :customers, through: :restaurant_reviews
 
-    validates :name, :email, :phone, 
-    :pay_bill, :till_num, :acc_num, :ambience, 
+    validates :name, :email, :phone, :ambience, 
     :price_range, :cuisine, :picture, :latitude, 
     :longitude, presence: true
 
