@@ -1,8 +1,8 @@
 puts "Seeding Data ...🌱🌱🌱"
 
-Customer.create(username: "User1", email: "user@gmail.com", password: "1234", password_confirmation: "1234",
-    phone: "0123456789", policy: true, picture: "https://th.bing.com/th/id/OIP.SKcexVoRNnffvOMny6sSvAHaDt?pid=ImgDet&rs=1"
-)
+# Customer.create(username: "User1", email: "user@gmail.com", password: "1234", password_confirmation: "1234",
+#     phone: "0123456789", policy: true, picture: "https://th.bing.com/th/id/OIP.SKcexVoRNnffvOMny6sSvAHaDt?pid=ImgDet&rs=1"
+# )
 
 Restaurant.create(name: "Orient", email: "res@gmail.com", password: "1234", password_confirmation: "1234",
     phone: "0123456789", policy: true, till_num:160580, ambience:"cultural", ratings: 4,
