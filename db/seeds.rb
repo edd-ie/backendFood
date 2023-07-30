@@ -148,50 +148,50 @@ puts "Seeding Data ...🌱🌱🌱"
 #     active: true,
 # )
 
-OrderTrack.create!(
-    status: "prepping",	
-    order_id: 1,
-    restaurant_id: 1,
-    staff_id: 1,
-    chef_id: 1,
-    paid: false,
-    complete: false,
-)
-OrderTrack.create!(
-    status: "cooking",	
-    order_id: 2,
-    restaurant_id: 1,
-    staff_id: 1,
-    chef_id: 2,
-    paid: true,
-    complete: false,
-)
-OrderTrack.create!(
-    status: "Done",	
-    order_id: 3,
-    restaurant_id: 1,
-    staff_id: 1,
-    chef_id: 3,
-    paid: true,
-    complete: true,
-)
-OrderTrack.create!(
-    status: "Done",	
-    order_id: 4,
-    restaurant_id: 1,
-    staff_id: 1,
-    chef_id: 4,
-    paid: false,
-    complete: true,
-)
-OrderTrack.create!(
-    status: "Done",	
-    order_id: 5,
-    restaurant_id: 1,
-    staff_id: 1,
-    chef_id: 4,
-    paid: true,
-    complete: true,
-)
+# OrderTrack.create!(
+#     status: "prepping",	
+#     order_id: 1,
+#     restaurant_id: 1,
+#     staff_id: 1,
+#     chef_id: 1,
+#     paid: false,
+#     complete: false,
+# )
+# OrderTrack.create!(
+#     status: "cooking",	
+#     order_id: 2,
+#     restaurant_id: 1,
+#     staff_id: 1,
+#     chef_id: 2,
+#     paid: true,
+#     complete: false,
+# )
+# OrderTrack.create!(
+#     status: "Done",	
+#     order_id: 3,
+#     restaurant_id: 1,
+#     staff_id: 1,
+#     chef_id: 3,
+#     paid: true,
+#     complete: true,
+# )
+# OrderTrack.create!(
+#     status: "Done",	
+#     order_id: 4,
+#     restaurant_id: 1,
+#     staff_id: 1,
+#     chef_id: 4,
+#     paid: false,
+#     complete: true,
+# )
+# OrderTrack.create!(
+#     status: "Done",	
+#     order_id: 5,
+#     restaurant_id: 1,
+#     staff_id: 1,
+#     chef_id: 4,
+#     paid: true,
+#     complete: true,
+# )
 
 puts "✅✅✅...Seeding Data Complete"	

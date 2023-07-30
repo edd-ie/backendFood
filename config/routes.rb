@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # root routes
   root "fallback#home"
-  get "*path", to: "fallback#error", constraints: ->(req) { !req.xhr? && req.format.html? }
+  # get "*path", to: "fallback#error", constraints: ->(req) { !req.xhr? && req.format.html? }
   
   # main routes
   resources :loyalties
