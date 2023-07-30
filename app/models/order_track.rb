@@ -1,0 +1,2 @@
+class OrderTrack < ApplicationRecord
+end

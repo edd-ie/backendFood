@@ -1,6 +1,18 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  resources :loyalties
+  resources :inventories
+  resources :order_tracks
+  resources :orders
+  resources :restaurant_reviews
+  resources :food_reviews
+  resources :fav_foods
+  resources :fav_restaurants
+  resources :foods
+  resources :staffs
+  resources :restaurants
+  resources :customers
+  # root routes
+  root "fallback#home"
+  get "*path", to: "fallback#error", constraints: ->(req) { !req.xhr? && req.format.html? }
 
-  # Defines the root path route ("/")
-  # root "articles#index"
 end

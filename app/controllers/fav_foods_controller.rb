@@ -1,0 +1,2 @@
+class FavFoodsController < ApplicationController
+end

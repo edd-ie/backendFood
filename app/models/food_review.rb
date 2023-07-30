@@ -1,0 +1,2 @@
+class FoodReview < ApplicationRecord
+end
