@@ -47,4 +47,8 @@ class Restaurant < ApplicationRecord
         food = self.foods.find_by(id:id)
         food.update(values)
     end
+
+    def category(value)
+        self.foods.where(category: value)
+    end
 end

@@ -36,4 +36,7 @@ Rails.application.routes.draw do
 
   get "/restaurant/menu/:id", to: "restaurants#menu"
   patch "/restaurant/updateMenu/:id", to: "foods#update"
+  
+  get "/restaurant/staff/:id", to: 'restaurants#staff'
+  patch "/restaurant/updateStaff/:id", to: 'staffs#update'
 end

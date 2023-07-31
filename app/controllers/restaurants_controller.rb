@@ -58,18 +58,9 @@ class RestaurantsController < ApplicationController
         render json: finder.menu, status: :ok
     end
 
-    def updateMenu
-        id = params[:food_id]
-        filtered = {}
-        valid_params.each do |key, value|
-            puts key
-            if key != :food_id
-                filtered[key] = value
-            end
-        end
-        p filtered
-        change = finder.menuChange(id,filtered)
-        render json: change, status: :accepted
+    def foodCategory
+        food = finder.foodCategory(params[:category])
+        render json: food, status: :ok
     end
 
 

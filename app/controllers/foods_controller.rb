@@ -18,7 +18,8 @@ class FoodsController < ApplicationController
     end
 
     def update
-        food = finder.update!(valid_params)
+        food = finder
+        food.update!(valid_params)
         render json: food, status: :accepted
     end
 
