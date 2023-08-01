@@ -7,7 +7,7 @@ class Restaurant < ApplicationRecord
     has_many :loyalties, dependent: :destroy
     has_many :staffs, dependent: :destroy
     has_many :order_tracks, dependent: :destroy
-    has_many :restaurant_reviews
+    has_many :restaurant_reviews, dependent: :destroy
     has_many :customers, through: :restaurant_reviews
 
     validates :name, :email, :phone, :ambience, 
@@ -51,4 +51,21 @@ class Restaurant < ApplicationRecord
     def category(value)
         self.foods.where(category: value)
     end
+
+    def reviews
+        self.restaurant_reviews
+    end
+
+    def ratings
+        count = self.restaurant_reviews.length
+        total = 5*count
+        sum = 0
+        self.restaurant_reviews.each{|x| 
+            sum += x[:rating]
+        }
+        rating = (((sum/total.to_f))*5).round(1)
+        self.update(ratings: rating)
+        rating
+    end
+    
 end

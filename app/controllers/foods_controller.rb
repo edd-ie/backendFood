@@ -28,6 +28,16 @@ class FoodsController < ApplicationController
         head :no_content
     end
 
+    def reviews
+        food = finder.foodReviews
+        render json: food, status: :ok
+    end
+
+    def ratings
+        food = finder.ratings
+        render json: food, status: :ok
+    end
+
 
     private
 

@@ -17,48 +17,48 @@ puts "Seeding Data ...🌱🌱🌱"
 #     picture: "https://th.bing.com/th/id/R.cedfefd8e352d0aa0032a17d67d83c2a?rik=ThkhfDVxcANZHw&pid=ImgRaw&r=0",
 #     latitude: -1.398300, longitude: 36.831060
 # )
-Restaurant.create(name: "WaySub1", email: "res3@gmail.com", password: "1234", password_confirmation: "1234",
-    phone: "0123456789", policy: true, till_num:160580, ambience:"cultural", ratings: 4,
-    cuisine: "swahili", price_range: "$",
-    picture: "https://th.bing.com/th/id/R.cedfefd8e352d0aa0032a17d67d83c2a?rik=ThkhfDVxcANZHw&pid=ImgRaw&r=0",
-    latitude: -1.598300, longitude: 36.5901060
-)
-Restaurant.create(name: "WaySu2", email: "res4@gmail.com", password: "1234", password_confirmation: "1234",
-    phone: "0123456789", policy: true, till_num:160580, ambience:"Classy", ratings: 4,
-    cuisine: "italian", price_range: "$",
-    picture: "https://th.bing.com/th/id/R.cedfefd8e352d0aa0032a17d67d83c2a?rik=ThkhfDVxcANZHw&pid=ImgRaw&r=0",
-    latitude: -1.598300, longitude: 36.5901060
-)
-Restaurant.create(name: "WaySub3", email: "res5@gmail.com", password: "1234", password_confirmation: "1234",
-    phone: "0123456789", policy: true, till_num:160580, ambience:"urban", ratings: 4,
-    cuisine: "fastFood", price_range: "$",
-    picture: "https://th.bing.com/th/id/R.cedfefd8e352d0aa0032a17d67d83c2a?rik=ThkhfDVxcANZHw&pid=ImgRaw&r=0",
-    latitude: -1.598300, longitude: 36.5901060
-)
-Restaurant.create(name: "WaySub4", email: "res6@gmail.com", password: "1234", password_confirmation: "1234",
-    phone: "0123456789", policy: true, till_num:160580, ambience:"urban", ratings: 4,
-    cuisine: "fastFood", price_range: "$",
-    picture: "https://th.bing.com/th/id/R.cedfefd8e352d0aa0032a17d67d83c2a?rik=ThkhfDVxcANZHw&pid=ImgRaw&r=0",
-    latitude: -1.598300, longitude: 36.5901060
-)
-Restaurant.create(name: "WaySub6", email: "res7@gmail.com", password: "1234", password_confirmation: "1234",
-    phone: "0123456789", policy: true, till_num:160580, ambience:"urban", ratings: 4,
-    cuisine: "swahili", price_range: "$",
-    picture: "https://th.bing.com/th/id/R.cedfefd8e352d0aa0032a17d67d83c2a?rik=ThkhfDVxcANZHw&pid=ImgRaw&r=0",
-    latitude: -1.598300, longitude: 36.5901060
-)
-Restaurant.create(name: "WaySub4", email: "res8@gmail.com", password: "1234", password_confirmation: "1234",
-    phone: "0123456789", policy: true, till_num:160580, ambience:"urban", ratings: 4,
-    cuisine: "swahili", price_range: "$",
-    picture: "https://th.bing.com/th/id/R.cedfefd8e352d0aa0032a17d67d83c2a?rik=ThkhfDVxcANZHw&pid=ImgRaw&r=0",
-    latitude: -1.598300, longitude: 36.5901060
-)
-Restaurant.create(name: "WaySub13", email: "res9@gmail.com", password: "1234", password_confirmation: "1234",
-    phone: "0123456789", policy: true, till_num:160580, ambience:"urban", ratings: 4,
-    cuisine: "swahili", price_range: "$",
-    picture: "https://th.bing.com/th/id/R.cedfefd8e352d0aa0032a17d67d83c2a?rik=ThkhfDVxcANZHw&pid=ImgRaw&r=0",
-    latitude: -1.598300, longitude: 36.5901060
-)
+# Restaurant.create(name: "WaySub1", email: "res3@gmail.com", password: "1234", password_confirmation: "1234",
+#     phone: "0123456789", policy: true, till_num:160580, ambience:"cultural", ratings: 4,
+#     cuisine: "swahili", price_range: "$",
+#     picture: "https://th.bing.com/th/id/R.cedfefd8e352d0aa0032a17d67d83c2a?rik=ThkhfDVxcANZHw&pid=ImgRaw&r=0",
+#     latitude: -1.598300, longitude: 36.5901060
+# )
+# Restaurant.create(name: "WaySu2", email: "res4@gmail.com", password: "1234", password_confirmation: "1234",
+#     phone: "0123456789", policy: true, till_num:160580, ambience:"Classy", ratings: 4,
+#     cuisine: "italian", price_range: "$",
+#     picture: "https://th.bing.com/th/id/R.cedfefd8e352d0aa0032a17d67d83c2a?rik=ThkhfDVxcANZHw&pid=ImgRaw&r=0",
+#     latitude: -1.598300, longitude: 36.5901060
+# )
+# Restaurant.create(name: "WaySub3", email: "res5@gmail.com", password: "1234", password_confirmation: "1234",
+#     phone: "0123456789", policy: true, till_num:160580, ambience:"urban", ratings: 4,
+#     cuisine: "fastFood", price_range: "$",
+#     picture: "https://th.bing.com/th/id/R.cedfefd8e352d0aa0032a17d67d83c2a?rik=ThkhfDVxcANZHw&pid=ImgRaw&r=0",
+#     latitude: -1.598300, longitude: 36.5901060
+# )
+# Restaurant.create(name: "WaySub4", email: "res6@gmail.com", password: "1234", password_confirmation: "1234",
+#     phone: "0123456789", policy: true, till_num:160580, ambience:"urban", ratings: 4,
+#     cuisine: "fastFood", price_range: "$",
+#     picture: "https://th.bing.com/th/id/R.cedfefd8e352d0aa0032a17d67d83c2a?rik=ThkhfDVxcANZHw&pid=ImgRaw&r=0",
+#     latitude: -1.598300, longitude: 36.5901060
+# )
+# Restaurant.create(name: "WaySub6", email: "res7@gmail.com", password: "1234", password_confirmation: "1234",
+#     phone: "0123456789", policy: true, till_num:160580, ambience:"urban", ratings: 4,
+#     cuisine: "swahili", price_range: "$",
+#     picture: "https://th.bing.com/th/id/R.cedfefd8e352d0aa0032a17d67d83c2a?rik=ThkhfDVxcANZHw&pid=ImgRaw&r=0",
+#     latitude: -1.598300, longitude: 36.5901060
+# )
+# Restaurant.create(name: "WaySub4", email: "res8@gmail.com", password: "1234", password_confirmation: "1234",
+#     phone: "0123456789", policy: true, till_num:160580, ambience:"urban", ratings: 4,
+#     cuisine: "swahili", price_range: "$",
+#     picture: "https://th.bing.com/th/id/R.cedfefd8e352d0aa0032a17d67d83c2a?rik=ThkhfDVxcANZHw&pid=ImgRaw&r=0",
+#     latitude: -1.598300, longitude: 36.5901060
+# )
+# Restaurant.create(name: "WaySub13", email: "res9@gmail.com", password: "1234", password_confirmation: "1234",
+#     phone: "0123456789", policy: true, till_num:160580, ambience:"urban", ratings: 4,
+#     cuisine: "swahili", price_range: "$",
+#     picture: "https://th.bing.com/th/id/R.cedfefd8e352d0aa0032a17d67d83c2a?rik=ThkhfDVxcANZHw&pid=ImgRaw&r=0",
+#     latitude: -1.598300, longitude: 36.5901060
+# )
 
 # cat = ['Burgers', 'Fries', 'Sides', 'Main', 'Desserts']
 # n = 0
@@ -229,5 +229,29 @@ Restaurant.create(name: "WaySub13", email: "res9@gmail.com", password: "1234", p
 #     paid: true,
 #     complete: true,
 # )
+
+
+6.times do
+RestaurantReview.create!(
+        comment: Faker::Restaurant.review,
+        restaurant_id: 1,
+        customer_id: 1,
+        like: 12,
+        dislike:2,
+        rating:  rand(1..5)
+    )
+end
+
+6.times do
+    FoodReview.create!(
+        comment: Faker::Restaurant.review,
+        food_id: 1,
+        customer_id: 1,
+        like: 22,
+        dislike:9,
+        rating: rand(1..5)
+    )
+end
+
 
 puts "✅✅✅...Seeding Data Complete"	

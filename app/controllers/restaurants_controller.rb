@@ -63,6 +63,26 @@ class RestaurantsController < ApplicationController
         render json: food, status: :ok
     end
 
+    def vegFood
+        food = finder.foods.where(vegetarian: true)
+        render json: food, status: :ok
+    end
+
+    def allergen
+        food = finder.foods.where(allergen: false)
+        render json: food, status: :ok
+    end
+
+    def reviews
+        comments = finder.reviews
+        render json: comments, status: :ok
+    end
+
+    def ratings
+        ratings = finder.ratings
+        render json: ratings, status: :ok
+    end
+
 
     private
 
