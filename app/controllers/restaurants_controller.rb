@@ -83,6 +83,10 @@ class RestaurantsController < ApplicationController
         render json: ratings, status: :ok
     end
 
+    def inventory
+        inventories = finder.inventories
+        render json: inventories, status: :ok
+    end
 
     private
 

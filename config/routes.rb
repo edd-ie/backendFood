@@ -57,6 +57,8 @@ Rails.application.routes.draw do
   get "/restaurant/reviews/:id", to: "restaurants#reviews"
   get "/restaurant/ratings/:id", to: "restaurants#ratings"
 
+  get "/restaurant/inventory/:id", to: "restaurants#inventory"
+
   # Food
   get "/food/reviews/:id", to: "foods#reviews"
   get "/food/ratings/:id", to: "foods#ratings"
