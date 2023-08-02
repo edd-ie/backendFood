@@ -1,3 +1,5 @@
 class InventorySerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id , :name , :quantity ,:restaurant_id
+
+  belongs_to :restaurant
 end
