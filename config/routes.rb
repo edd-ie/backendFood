@@ -3,6 +3,18 @@ Rails.application.routes.draw do
   root "fallback#home"
   # get "*path", to: "fallback#error", constraints: ->(req) { !req.xhr? && req.format.html? }
   
+  # Authentication routes
+  post "/customer/login", to: "sessions#cusLog"
+  post "/restaurant/login", to: "sessions#resLog"
+  
+  post "/customer/new", to: "sessions#cusNew"
+  post "/restaurant/new", to: "sessions#resNew"
+
+  get '/res/me', to: "sessions#resLogged_in"
+  get '/me', to: "sessions#logged_in"
+  delete "/logout", to: "sessions#destroy"
+
+
   # main routes
   resources :loyalties
   resources :inventories

@@ -231,27 +231,27 @@ puts "Seeding Data ...🌱🌱🌱"
 # )
 
 
-6.times do
-RestaurantReview.create!(
-        comment: Faker::Restaurant.review,
-        restaurant_id: 1,
-        customer_id: 1,
-        like: 12,
-        dislike:2,
-        rating:  rand(1..5)
-    )
-end
+# 6.times do
+# RestaurantReview.create!(
+#         comment: Faker::Restaurant.review,
+#         restaurant_id: 1,
+#         customer_id: 1,
+#         like: 12,
+#         dislike:2,
+#         rating:  rand(1..5)
+#     )
+# end
 
-6.times do
-    FoodReview.create!(
-        comment: Faker::Restaurant.review,
-        food_id: 1,
-        customer_id: 1,
-        like: 22,
-        dislike:9,
-        rating: rand(1..5)
-    )
-end
+# 6.times do
+#     FoodReview.create!(
+#         comment: Faker::Restaurant.review,
+#         food_id: 1,
+#         customer_id: 1,
+#         like: 22,
+#         dislike:9,
+#         rating: rand(1..5)
+#     )
+# end
 
 
 puts "✅✅✅...Seeding Data Complete"	
