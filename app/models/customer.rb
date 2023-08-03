@@ -10,8 +10,8 @@ class Customer < ApplicationRecord
     has_many :food_reviews, dependent: :destroy
     has_many :restaurants, through: :restaurant_reviews
 
-    # validates :username, :email, uniqueness: true, presence: true
-    # validates :password, :password_confirmation, :phone, presence: true
+    validates :username, :email, uniqueness: true, presence: true
+    validates :password, :phone, presence: true
 
     def allOrders
         self.orders.all
