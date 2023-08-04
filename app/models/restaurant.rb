@@ -55,6 +55,20 @@ class Restaurant < ApplicationRecord
         self.restaurant_reviews
     end
 
+    def sales
+        sale = self.order_tracks.where(paid: true)
+        total = 0
+        counter = sale.each{|y| total += Order.find(y.order_id).total}
+        total
+    end
+
+    def test
+        y = self.order_tracks.where(paid: true)
+        z = y.each{|c| z.push(Order.find(c.order_id))}
+        i = {}
+        z.each{|x| i[Food.find(x.food_id[0])] = Food.find(x.food_id[0]).price i[Food.find(x.food_id[1])] = Food.find(x.food_id[1]).price }
+    end
+
     def ratings
         count = self.restaurant_reviews.length
         total = 5*count

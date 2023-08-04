@@ -88,6 +88,11 @@ class RestaurantsController < ApplicationController
         render json: inventories, status: :ok
     end
 
+    def totalSales
+        total = finder.sales
+        render json: total, status: :ok
+    end
+
     private
 
     def finder
