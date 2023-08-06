@@ -62,11 +62,13 @@ class Restaurant < ApplicationRecord
         total
     end
 
-    def test
-        y = self.order_tracks.where(paid: true)
-        z = y.each{|c| z.push(Order.find(c.order_id))}
-        i = {}
-        z.each{|x| i[Food.find(x.food_id[0])] = Food.find(x.food_id[0]).price i[Food.find(x.food_id[1])] = Food.find(x.food_id[1]).price }
+    def categorySale
+        track = self.order_tracks.where(paid: true)
+        category = {}
+        track.each{|sale|
+            category[Food.find(Order.find(sale.order_id)[:food_id][1])[:category]] += Order.find(sale.order_id)[:total]
+        }
+        category
     end
 
     def ratings
@@ -80,5 +82,38 @@ class Restaurant < ApplicationRecord
         self.update(ratings: rating)
         rating
     end
-    
+
+
+    def transactions
+        all = self.order_tracks.all.where(paid: true)
+        allTime = []
+        all.each{|x| 
+            day = x[:updated_at].to_s.split(' ')[0].split('-')
+            allTime.push(
+                {time: day[1]+'/'+day[2], 
+                total: Order.find(x.order_id)[:total]}
+            )
+        }
+        month = []
+        allTime.each{|x|
+            comp = Date.today.month
+            if x[:time].split('/')[0].to_i == comp
+                month.push(x)
+            end
+        }
+        day = []
+        month.each{|x|
+            date = Date.today.day
+            if x[:time].split('/')[1].to_i == date
+                day.push(x)
+            end
+        }
+
+        transactions = {
+            all: allTime,
+            month: month,
+            day: day
+        }
+
+    end
 end

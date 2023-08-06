@@ -93,6 +93,11 @@ class RestaurantsController < ApplicationController
         render json: total, status: :ok
     end
 
+    def transactions
+        transactions = finder.transactions
+        render json: transactions, status: :ok
+    end
+
     private
 
     def finder
