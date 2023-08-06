@@ -137,6 +137,6 @@ class Restaurant < ApplicationRecord
         category = category.sort_by {|k,v| -v}
         foods = foods.sort_by {|k,v| -v}
 
-        [category, foods]
+        {categories:category, foods:foods}
     end
 end
