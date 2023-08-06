@@ -137,6 +137,15 @@ class Restaurant < ApplicationRecord
         category = category.sort_by {|k,v| -v}
         foods = foods.sort_by {|k,v| -v}
 
-        {categories:category, foods:foods}
+        data1 = {}
+        category.each{|x|
+            data1[x[0]] = x[1]
+        }
+        data2 = {}
+        foods.each{|x|
+            data2[x[0]] = x[1]
+        }
+
+        {categories:data1, foods:data2}
     end
 end
