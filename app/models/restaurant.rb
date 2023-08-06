@@ -114,6 +114,29 @@ class Restaurant < ApplicationRecord
             month: month,
             day: day
         }
+    end
+    
 
+    def rankings
+        orders = self.orders.all
+        category = {}
+        foods = {}
+        orders.each do |x|
+            x[:food_id].each do |id|
+                item = Food.find(id)
+                category[item[:category]] ||= 0 # initialize the value to 0 if it doesn't exist
+                category[item[:category]] += 1 # increment the value by 1
+                
+                foods[item[:name]] ||= 0 # initialize the value to 0 if it doesn't exist
+                foods[item[:name]] += 1 # increment the value by 1
+            end
+        end
+        category.delete(nil)
+        foods.delete(nil)
+
+        category = category.sort_by {|k,v| -v}
+        foods = foods.sort_by {|k,v| -v}
+
+        [category, foods]
     end
 end
