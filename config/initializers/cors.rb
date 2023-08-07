@@ -19,11 +19,11 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
   end
   
   allow do
-    origins 'https://food-chapchap.vercel.app'  # Frontend website url
+    origins '*'  # Frontend website url
 
     resource '*',
       headers: :any,
       methods: :any,
-      credentials: true
+      # credentials: true
   end
 end
