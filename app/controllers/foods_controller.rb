@@ -46,7 +46,7 @@ class FoodsController < ApplicationController
     end
 
     def valid_params
-        params.permit(:id, :name, :discount, :food_id, :vegetarian, :allergen, :category,
+        params.permit(:id, :name, :discount, :food_id, :vegetarian, :allergen, :category, :restaurant_id,
             :sales, :ratings, :price, :ingredients, :picture)
     end
 
