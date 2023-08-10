@@ -6,14 +6,14 @@ class Order < ApplicationRecord
     belongs_to :restaurant
 
     #get array of items & food_ids from Front
-    def newTrack
+    def newTrack(pay)
         OrderTrack.create!(
             items: self.items,
             status: "prepping",
             order_id: self.id,
             staff_id: 1,
             restaurant_id: self.restaurant_id,
-            paid: false,
+            paid: pay,
             complete: false,
         )
     end

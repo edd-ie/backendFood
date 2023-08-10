@@ -22,8 +22,8 @@ class OrdersController < ApplicationController
     end
 
     def create
-        order = Order.create!(valid_params)
-        order.newTrack
+        order = Order.create!(items:params[:items], total:params[:total], service_fee:params[:service_fee], discount:params[:discount], food_id:params[:food_id], latitude:params[:latitude], longitude:params[:longitude], restaurant_id:params[:restaurant_id], customer_id:params[:customer_id])
+        order.newTrack(params[:paid])
         render json: order, status: :created
     end
 
@@ -37,7 +37,7 @@ class OrdersController < ApplicationController
     end
 
     def valid_params
-        params.permit(:id, :item, :total, :service_fee, :discount, :food_id, :latitude, :longitude, :restaurant_id, :customer_id)
+        params.permit(:id, :items, :staff_id, :paid, :total, :service_fee, :discount, :food_id, :latitude, :longitude, :restaurant_id, :customer_id)
     end
 
     def no_records
